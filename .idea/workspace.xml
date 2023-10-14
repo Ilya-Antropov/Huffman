@@ -20,14 +20,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b2114e6-6c8b-4009-b0b0-4b287663e576" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Huffman.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Huffman.iml" afterDir="false" />
+    <list default="true" id="8b2114e6-6c8b-4009-b0b0-4b287663e576" name="Changes" comment="Fixed a bug in the Uzel class, + replaced with *.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Huffman.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Huffman.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Huffman" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Huffman" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +95,7 @@
       <workItem from="1697101754261" duration="23000" />
       <workItem from="1697104147796" duration="1498000" />
       <workItem from="1697105884430" duration="2634000" />
-      <workItem from="1697127330330" duration="1333000" />
+      <workItem from="1697127330330" duration="6833000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1696423820357</created>
@@ -110,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696423820357</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="We have defined the class `Uzel` which,represents a node in a Huffman tree.">
+      <created>1697128834460</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697128834460</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +130,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init commit" />
+    <MESSAGE value="We have defined the class `Uzel` which,represents a node in a Huffman tree." />
+    <option name="LAST_COMMIT_MESSAGE" value="We have defined the class `Uzel` which,represents a node in a Huffman tree." />
   </component>
 </project>
