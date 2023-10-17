@@ -40,9 +40,9 @@ public:
     Hafman();
     ~Hafman();
     void buildForEncode(ifstream& f);
-    double encode(ifstream& f, ofstream& g);
-    void TreeHaf(Uzel* r);
     void buildForDecode(ifstream& fg);
+    void TreeHaf(Uzel* r);
+    double encode(ifstream& f, ofstream& g);
     bool decode(ifstream& fg,ofstream& gf);
     struct Sort {
         bool operator() (const Uzel* l, const Uzel* r) {
@@ -68,6 +68,46 @@ void Hafman::buildForEncode(ifstream& f) {
     while (!f.eof()) {
         char c = f.get();
         m[c]++;
+    }
+    list<Uzel*> L;
+    for (ii = m.begin(); ii != m.end(); ii++) {
+        Uzel* p = new Uzel;
+        p->s = ii->first;
+        p->key = ii->second;
+        L.push_back(p);
+    }
+    while (L.size() != 1) {
+        L.sort(Sort());
+        Uzel* Left = L.front();
+        L.pop_front();
+        Uzel* Right = L.front();
+        L.pop_front();
+        Uzel* pr = new Uzel(Left, Right);
+        L.push_back(pr);
+    }
+    root = L.front();
+}
+
+void Hafman::buildForDecode(ifstream& f) {
+    if (root != NULL){
+        delete root;
+        root = NULL;
+    }
+    if (m.size() != 0)
+        m.clear();
+    if (code.size() != 0)
+        code.clear();
+    if (buf.size() != 0)
+        buf.clear();
+
+    int x1,x2;
+    char s;
+    f.read((char*)&x1, sizeof (x1));
+    while (x1 > 0) {
+        f.read((char*)&s, sizeof(s));
+        f.read((char*)&x2, sizeof(x2));
+        x1 -= 40;
+        m[s] = x2;
     }
     list<Uzel*> L;
     for (ii = m.begin(); ii != m.end(); ii++) {
@@ -132,62 +172,6 @@ double Hafman::encode(ifstream& f, ofstream& g) {
     return sizeG / sizeF;
 }
 
-void Hafman::TreeHaf(Uzel* r) {
-    if (r->left != NULL) {
-        code.push_back(0);
-        TreeHaf(r->left);
-    }
-    if (r->right != NULL) {
-        code.push_back(1);
-        TreeHaf(r->right);
-    }
-    if (r->right == NULL && r->left == NULL) {
-        buf[r->s] = code;
-    }
-    if (!code.empty())
-        code.pop_back();
-}
-
-void Hafman::buildForDecode(ifstream& f) {
-    if (root != NULL){
-        delete root;
-        root = NULL;
-    }
-    if (m.size() != 0)
-        m.clear();
-    if (code.size() != 0)
-        code.clear();
-    if (buf.size() != 0)
-        buf.clear();
-
-    int x1,x2;
-    char s;
-    f.read((char*)&x1, sizeof (x1));
-    while (x1 > 0) {
-        f.read((char*)&s, sizeof(s));
-        f.read((char*)&x2, sizeof(x2));
-        x1 -= 40;
-        m[s] = x2;
-    }
-    list<Uzel*> L;
-    for (ii = m.begin(); ii != m.end(); ii++) {
-        Uzel* p = new Uzel;
-        p->s = ii->first;
-        p->key = ii->second;
-        L.push_back(p);
-    }
-    while (L.size() != 1) {
-        L.sort(Sort());
-        Uzel* Left = L.front();
-        L.pop_front();
-        Uzel* Right = L.front();
-        L.pop_front();
-        Uzel* pr = new Uzel(Left, Right);
-        L.push_back(pr);
-    }
-    root = L.front();
-}
-
 bool Hafman::decode(ifstream& fg, ofstream& gf){
     if (fg.is_open()) {
         buildForDecode(fg);
@@ -217,6 +201,22 @@ bool Hafman::decode(ifstream& fg, ofstream& gf){
         }
     }
     return true;
+}
+
+void Hafman::TreeHaf(Uzel* r) {
+    if (r->left != NULL) {
+        code.push_back(0);
+        TreeHaf(r->left);
+    }
+    if (r->right != NULL) {
+        code.push_back(1);
+        TreeHaf(r->right);
+    }
+    if (r->right == NULL && r->left == NULL) {
+        buf[r->s] = code;
+    }
+    if (!code.empty())
+        code.pop_back();
 }
 
 int main() {
