@@ -20,10 +20,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b2114e6-6c8b-4009-b0b0-4b287663e576" name="Changes" comment="Fixed a bug in the Uzel class, + replaced with *.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    <list default="true" id="8b2114e6-6c8b-4009-b0b0-4b287663e576" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +122,21 @@
       <option name="project" value="LOCAL" />
       <updated>1697313964887</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="The buildForEncode function is used to build a Huffman tree based on an input file. The function accepts an ifstream that contains data. First, the function clears the current tree, if there is one. Then it counts the frequency of occurrence of each character in the file and creates objects of type Uzel that contain the characters and their corresponding frequencies. The data is added to the list L. After that, the list L is sorted in ascending order of frequencies using Sort(). &#10;The TreeHaf function is used to build codes for each symbol in the Huffman tree and save them to buf. The function recursively passes through the Huffman tree starting from the root node. Moving to the left adds character 0 to the code, and moving to the right adds character 1. If the current node is a leaf, the code for the current character is written to buf. After traversing one branch of the tree, the last added character is removed from the code.&#10;The encode function is used to encode data from an input file and write it to the output file. It first calls the buildForEncode function to build the Huffman tree and populate the buf. The function then writes the frequency of occurrence information of each character to the output file. Next, the input file is overwritten. For each character from the input file, the function gets its code from buf and writes its bits to the tx variable.When the tx variable is filled until it reaches 8 bits, it is written to the output file. Then the tx variable is reset and the process is repeated. At the end, the function returns the ratio of the output file size to the input file size, which allows estimating the efficiency of data compression.">
+      <created>1697547099548</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697547099548</updated>
+    </task>
+    <task id="LOCAL-00005" summary="The buildForEncode function is used to build a Huffman tree based on an input file. The function accepts an ifstream that contains data. First, the function clears the current tree, if there is one. Then it counts the frequency of occurrence of each character in the file and creates objects of type Uzel that contain the characters and their corresponding frequencies. The data is added to the list L. After that, the list L is sorted in ascending order of frequencies using Sort(). &#10;The TreeHaf function is used to build codes for each symbol in the Huffman tree and save them to buf. The function recursively passes through the Huffman tree starting from the root node. Moving to the left adds character 0 to the code, and moving to the right adds character 1. If the current node is a leaf, the code for the current character is written to buf. After traversing one branch of the tree, the last added character is removed from the code.&#10;The encode function is used to encode data from an input file and write it to the output file. It first calls the buildForEncode function to build the Huffman tree and populate the buf. The function then writes the frequency of occurrence information of each character to the output file. Next, the input file is overwritten. For each character from the input file, the function gets its code from buf and writes its bits to the tx variable.When the tx variable is filled until it reaches 8 bits, it is written to the output file. Then the tx variable is reset and the process is repeated. At the end, the function returns the ratio of the output file size to the input file size, which allows estimating the efficiency of data compression.">
+      <created>1697547138060</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697547138061</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +157,7 @@
     <MESSAGE value="Init commit" />
     <MESSAGE value="We have defined the class `Uzel` which,represents a node in a Huffman tree." />
     <MESSAGE value="Fixed bugs, added Hafman class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs, added Hafman class" />
+    <MESSAGE value="The buildForEncode function is used to build a Huffman tree based on an input file. The function accepts an ifstream that contains data. First, the function clears the current tree, if there is one. Then it counts the frequency of occurrence of each character in the file and creates objects of type Uzel that contain the characters and their corresponding frequencies. The data is added to the list L. After that, the list L is sorted in ascending order of frequencies using Sort(). &#10;The TreeHaf function is used to build codes for each symbol in the Huffman tree and save them to buf. The function recursively passes through the Huffman tree starting from the root node. Moving to the left adds character 0 to the code, and moving to the right adds character 1. If the current node is a leaf, the code for the current character is written to buf. After traversing one branch of the tree, the last added character is removed from the code.&#10;The encode function is used to encode data from an input file and write it to the output file. It first calls the buildForEncode function to build the Huffman tree and populate the buf. The function then writes the frequency of occurrence information of each character to the output file. Next, the input file is overwritten. For each character from the input file, the function gets its code from buf and writes its bits to the tx variable.When the tx variable is filled until it reaches 8 bits, it is written to the output file. Then the tx variable is reset and the process is repeated. At the end, the function returns the ratio of the output file size to the input file size, which allows estimating the efficiency of data compression." />
+    <option name="LAST_COMMIT_MESSAGE" value="The buildForEncode function is used to build a Huffman tree based on an input file. The function accepts an ifstream that contains data. First, the function clears the current tree, if there is one. Then it counts the frequency of occurrence of each character in the file and creates objects of type Uzel that contain the characters and their corresponding frequencies. The data is added to the list L. After that, the list L is sorted in ascending order of frequencies using Sort(). &#10;The TreeHaf function is used to build codes for each symbol in the Huffman tree and save them to buf. The function recursively passes through the Huffman tree starting from the root node. Moving to the left adds character 0 to the code, and moving to the right adds character 1. If the current node is a leaf, the code for the current character is written to buf. After traversing one branch of the tree, the last added character is removed from the code.&#10;The encode function is used to encode data from an input file and write it to the output file. It first calls the buildForEncode function to build the Huffman tree and populate the buf. The function then writes the frequency of occurrence information of each character to the output file. Next, the input file is overwritten. For each character from the input file, the function gets its code from buf and writes its bits to the tx variable.When the tx variable is filled until it reaches 8 bits, it is written to the output file. Then the tx variable is reset and the process is repeated. At the end, the function returns the ratio of the output file size to the input file size, which allows estimating the efficiency of data compression." />
   </component>
 </project>
